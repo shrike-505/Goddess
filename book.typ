@@ -10,6 +10,9 @@
   language: "ch",
   summary: [
     #prefix-chapter("sample-page.typ")[TEST]
+    == USER GUIDE
+    #chapter("Milkyway.typ")[大路]
+    #chapter("Dagger.typ")[短剑]
   ]
 )
 
