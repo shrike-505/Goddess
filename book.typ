@@ -7,12 +7,13 @@
   title: "Goddess",
   description: "WIP",
   authors: ("shrike505",),
-  language: "ch",
+  repository: "https://github.com/shrike-505/Goddess",
+  language: "zh",
   summary: [
     #prefix-chapter("sample-page.typ")[TEST]
     == USER GUIDE
-    #chapter("Milkyway.typ")[大路]
-    #chapter("Dagger.typ")[短剑]
+    - #chapter("Milkyway.typ", section: none)[大路]
+    - #chapter("Dagger.typ", section: none)[短剑]
   ]
 )
 
@@ -20,6 +21,7 @@
   dest-dir: "./docs",
 )
 
+#get-book-meta()
 // re-export page template
-#import "/templates/page.typ": project
+#import "/templates/page.typ": project, heading-reference
 #let book-page = project
