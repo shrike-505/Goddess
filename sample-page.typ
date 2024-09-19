@@ -2,6 +2,6 @@
 
 #show: book-page.with(title: "Hello, typst")
 
-= Hello, typst
+= TEST
 
-Sample page
+123

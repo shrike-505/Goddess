@@ -4,13 +4,18 @@
 #show: book
 
 #book-meta(
-  title: "typst-book",
+  title: "Goddess",
+  description: "WIP",
+  authors: ("shrike505",),
+  language: "ch",
   summary: [
-    #prefix-chapter("sample-page.typ")[Hello, typst]
+    #prefix-chapter("sample-page.typ")[TEST]
   ]
 )
 
-
+#build-meta(
+  dest-dir: "./docs",
+)
 
 // re-export page template
 #import "/templates/page.typ": project
