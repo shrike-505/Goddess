@@ -28,24 +28,24 @@ jobs:
         url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Download font assets
         run: |
           mkdir -p assets/fonts
-          curl -L https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.1.0/charter-font-assets.tar.gz | tar -xvz -C assets/fonts
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-      - name: Set Node.js 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-      - name: Install Artifact Cache
-        uses: Swatinem/rust-cache@v2
+          curl -L https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.1.2/font-assets.tar.gz | tar -xvz -C assets/fonts
+          curl -L https://use.fontawesome.com/releases/v6.4.2/fontawesome-free-6.4.2-desktop.zip -o fontawesome-free-6.4.2-desktop.zip
+          unzip fontawesome-free-6.4.2-desktop.zip
+          cp -v -r fontawesome-free-6.4.2-desktop/otfs/* assets/fonts/
+      - name: Download & install typst-book
+        run: |
+          curl -L https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.1.5/typst-book-x86_64-unknown-linux-gnu.tar.gz | tar -xvz
+          chmod +x typst-book-x86_64-unknown-linux-gnu/bin/typst-book
+          sudo cp typst-book-x86_64-unknown-linux-gnu/bin/typst-book /usr/bin/typst-book
       - name: Build Book
         run: |
-          cargo run --release --bin shiroa -- build --font-path assets/fonts --path-to-root /Goddess/ -w .
+            typst-book build --font-path assets/fonts -w . -d ./dist .
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
