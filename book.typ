@@ -18,9 +18,9 @@
   ]
 )
 
-#build-meta(
-  dest-dir: "docs",
-)
+// #build-meta(
+//   dest-dir: "docs",
+// )
 
 #get-book-meta()
 // re-export page template
