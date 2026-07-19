@@ -2,8 +2,18 @@
 #import "@preview/gentle-clues:1.2.0": *
 #import "@preview/timeliney:0.3.0": *
 #show link: set text(red)
-#let myquote(x) = quote(rect(x, fill: rgb("#2f2a2a1d"), outset: 3%), block: true,quotes: false)
-#show: book-page.with(title: "中心页")
+#let myquote(x) = quote(
+  rect(x, fill: rgb("#2f2a2a1d"), outset: 3%),
+  block: true,
+  quotes: false,
+)
+
+// If you've contributed to the book, add your name to authors list
+#show: book-page.with(
+  title: "中心页",
+  authors: ("shrike505",),
+  description: "我会度过幸福的一生吗？",
+)
 
 // La derniere chose qu’on trouve en faisant un ouvrage est de savoir celle qu’il faut mettre la premiere.
 // [The last thing you figure out in writing a book is what to put first.]
@@ -12,14 +22,9 @@
 = 中心页
 
 #warning(title: "WIP")[
-    这部小说仍在创作中🖊
+  这部小说仍在创作中🖊
 ]
 
-#quotation(title: "标题来源自")[
-    《辐射：小马国》（Fallout: Equestria）中崔克茜（Trixie）跌入 IMP 药剂桶后形成的集体意识个体；
-    
-    郭沫若（1892-1978）的同名作品。
-]
 
 // == 时间线
 
@@ -33,7 +38,7 @@
 //       group(..range(4).map(n => strong("Q" + str(n + 1)))),
 //       group(..range(4).map(n => strong("Q" + str(n + 1)))),
 //     )
-  
+
 //     // taskgroup(title: link("https://shrike505.cc/Goddess/Episodes/Avenue.html")[*大路*], {
 //     //   task([Research the market], (1, 1.16), style: (stroke: 2pt + gray))
 //     //   task("Conduct user surveys", (1, 3), style: (stroke: 2pt + gray))
@@ -77,6 +82,16 @@
 
 // 你可以使用 GitHub 的 Fork 功能将#link("https://github.com/shrike-505/Goddess/")[本仓库] Fork 到你自己的账户下，然后在本地进行修改，最后提交 Pull Request 到本仓库，注意在新剧情完成后将其加入上方的 Timeline（你可能需要知道一些 Typst 语法）。
 
-// 在剧情方面，除了尽量不要吃书外，没有别的限制了（随意发挥吧:3）。
-
 // 在排版与视觉效果方面，有新的点子也欢迎提出。
+
+// === Code of Conduct
+
+// 1. 不要吃书
+// 2. 不要直接使用大语言模型生成的内容（除非设定需要）
+// 3. 不要抄袭（字面意义）
+
+#quotation(title: "标题来源")[
+  《辐射：小马国》（Fallout: Equestria）中崔克茜（Trixie）跌入 IMP 药剂桶后形成的集体意识个体；
+
+  郭沫若（1892-1978）的同名作品。
+]
