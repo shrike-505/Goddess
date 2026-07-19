@@ -4,7 +4,7 @@
 #show: book-page.with(
   title: "虚构症",
   authors: "shrike505",
-  description: "好吧，有多少概率你说的东西能成真？",  
+  description: "由我进入万劫不复的人群中。",  
 )
 
 = 虚构症

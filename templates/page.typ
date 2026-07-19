@@ -51,7 +51,7 @@
 
 // Sizes
 #let main-size = if is-web-target {
-  20pt
+  19pt
 } else {
   10.5pt
 }
